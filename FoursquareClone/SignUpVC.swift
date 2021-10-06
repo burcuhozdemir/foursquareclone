@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  FoursquareClone
 //
-//  Created by Akfsoft on 5.10.2021.
+//  Created by Burcu on 5.10.2021.
 //
 
 import UIKit
@@ -18,7 +18,8 @@ class SignUpVC: UIViewController {
         
         
     }
-
+    
+    //Sign in
     @IBAction func sigInClicked(_ sender: Any) {
         if usernameText.text != "" && passwordText.text != ""{
             PFUser.logInWithUsername(inBackground: usernameText.text!, password: passwordText.text!) { user, error in
@@ -34,7 +35,7 @@ class SignUpVC: UIViewController {
         }
     }
     
-    
+    //Sign Up
     @IBAction func signUpClicked(_ sender: Any) {
         if usernameText.text != "" && passwordText.text != ""{
             let user = PFUser()
@@ -53,6 +54,7 @@ class SignUpVC: UIViewController {
         }
     }
     
+    //Alert
     func makeAlert(titleInput: String, messageInput: String){
         let alert = UIAlertController(title: titleInput, message: messageInput, preferredStyle: UIAlertController.Style.alert)
         let okButton = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil)

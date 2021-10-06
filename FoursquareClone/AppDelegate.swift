@@ -2,10 +2,11 @@
 //  AppDelegate.swift
 //  FoursquareClone
 //
-//  Created by Akfsoft on 5.10.2021.
+//  Created by Burcu on 5.10.2021.
 //
 
 import UIKit
+import Parse
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //PARSE config
+        let configuration = ParseClientConfiguration { (ParseMutableClientConfiguration) in
+            ParseMutableClientConfiguration.applicationId = "E4InYigo9F1FwPbFueAfpU0v4TkvHr6qgzucPazG"
+            ParseMutableClientConfiguration.clientKey = "Sg4gl2wSdhwMxmyT0Ph3GzkAn3c3z3FjfjFHPsNj"
+            ParseMutableClientConfiguration.server = "https://parseapi.back4app.com/"
+        }
+        
+        Parse.initialize(with: configuration)
+        
         return true
     }
 
